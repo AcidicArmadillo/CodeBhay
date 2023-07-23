@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block code %}
+<textarea id="text-code" name="code" style="display: none" rows=15 cols=20>
+    {{ code }}
+    </textarea>
+<div
+          contenteditable="true"
+          id="editor"
+          style="
+            opacity: 1;
+            font-size: 20px;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            position: relative;
+          "
+        >{{ code }}</div>
+
+{% endblock %}
+
+{% block run %}
+<textarea style="padding: 8px; font-size: larger;" id="text-result"  readonly>{{ resrun }}</textarea>
+{% endblock %}
+
+{% block comp %}
+<textarea style="padding: 8px; font-size: larger;" id="text-compile" readonly>{{ rescomp }}</textarea>
+{% endblock %}
+
+
+{% block testcase %}
+<textarea style="padding: 8px; font-size: larger;" id="text-testcase" name="testcase"></textarea> <!-- you have to add name attribute to pass the value it over a request -->
+{% endblock %}
+
+{% block status %}
+<textarea style="padding: 8px; font-size: larger;" id="text-status"  readonly></textarea>
+{% endblock %}
+
